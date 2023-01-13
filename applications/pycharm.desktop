@@ -1,0 +1,12 @@
+[Desktop Entry]
+Version=1.0
+Encoding=UTF-8
+Type=Application
+Name=PyCharm
+GenericName=PyCharm
+Comment=Python IDE
+Icon=/usr/pkg/pycharm-bin-2019.1.2/bin/pycharm.png
+Exec=/usr/pkg/pycharm-bin-2019.1.2/bin/pycharm.sh
+Terminal=false
+StartupNotify=true
+Categories=Application;Development;

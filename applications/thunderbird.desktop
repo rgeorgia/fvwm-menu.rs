@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=thunderbird
+GenericName=Mail Client
+Comment=Mail client and News Reader
+Exec=thunderbird %U
+Icon=thunderbird.png
+StartupNotify=false
+Terminal=false
+Type=Application
+Categories=Application;Network;Email;
+MimeType=x-scheme-handler/mailto;
