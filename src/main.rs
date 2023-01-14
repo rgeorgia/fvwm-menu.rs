@@ -4,6 +4,7 @@ use std::io::Read;
 use std::fs;
 use std::path::Path;
 use std::env ;
+use directories::UserDirs;
 
 /*
 [ ] Find application directory
@@ -27,7 +28,7 @@ fn main() {
     } else {
         print!("Cannot locate {}", &menu_config.app_path.path);
     }
-    match env::home_dir() {
+    match UserDirs::home_dir() {
         Some(path) => println!("Your home directory, probably: {}", path.display()),
         None => println!("Impossible to get your home dir!"),
     }
