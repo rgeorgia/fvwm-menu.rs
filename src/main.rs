@@ -3,7 +3,6 @@ mod menu_model;
 use std::io::Read;
 use std::fs;
 use std::path::Path;
-use std::env ;
 use directories::UserDirs;
 
 /*
@@ -28,9 +27,8 @@ fn main() {
     } else {
         print!("Cannot locate {}", &menu_config.app_path.path);
     }
-    match UserDirs::home_dir() {
-        Some(path) => println!("Your home directory, probably: {}", path.display()),
-        None => println!("Impossible to get your home dir!"),
+    if let Some(users_dir) = UserDirs::new() {
+        println!("Home: {:?}\n", users_dir.home_dir());
     }
 }
 
