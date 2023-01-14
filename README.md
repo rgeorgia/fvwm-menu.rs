@@ -16,6 +16,9 @@ Remember to do one thing and do it well.
 # Steps, Path, Roadmap
 
 - Read applications directory
+  - Set application directory.
+  - NetBSD - `/usr/pkg/share/applications`
+  - Almost everyone else - `/usr/local/share/applications/`
 - Get all the files that have a .desktop extension
 - Read each file
 - Parse each file for specific properties
@@ -28,9 +31,8 @@ Remember to do one thing and do it well.
 
 ### Application Directory
 - get location of applications directory
-  - Is there a .env file in $HOME dir? 
-    - If yes, **read** .env **file** and use the app dir path there
-    - If no .env the check argv for location : string or path
+  - NetBSD - `/usr/pkg/share/applications`
+  - Almost everyone else - `/usr/local/share/applications/`
 - **Verify path** exists; if not, exit
 - List application directory
 - get all files with .desktop extension

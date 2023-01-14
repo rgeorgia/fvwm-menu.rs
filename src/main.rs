@@ -15,6 +15,7 @@ use directories::UserDirs;
  */
 
 
+
 fn main() {
     let file_name = ".fvwmrc";
     let menu_config = config(file_name);
