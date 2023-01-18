@@ -1,9 +1,11 @@
-mod menu_model;
+mod model;
 
 use std::io::Read;
 use std::fs;
 use std::path::Path;
 use directories::UserDirs;
+use std::env;
+
 
 /*
 [ ] Find application directory
@@ -16,27 +18,38 @@ use directories::UserDirs;
 
 
 
-fn main() {
-    let file_name = ".fvwmrc";
-    let menu_config = config(file_name);
 
-    if Path::new(&menu_config.app_path.path).exists() {
-        let paths = fs::read_dir(menu_config.app_path.path).unwrap();
+fn main() {
+    let app_path = get_application_dir();
+
+    if Path::new(app_path).exists() {
+        let paths = fs::read_dir(app_path).unwrap();
         for path in paths {
             println!("{}", path.unwrap().path().display())
         }
     } else {
-        print!("Cannot locate {}", &menu_config.app_path.path);
+        print!("Cannot locate {}", &app_path);
     }
-    if let Some(users_dir) = UserDirs::new() {
-        println!("Home: {:?}\n", users_dir.home_dir());
+
+}
+
+
+fn get_application_dir() -> &'static str {
+    let os_name = env::consts::OS ;
+    match os_name {
+        "netbsd" => "/usr/pkg/share/applications/",
+        _ => "/usr/local/share/applications/"
     }
 }
 
-fn config(file_name: &str) -> menu_model::Config {
-    let mut file = std::fs::File::open(&file_name).expect("Error opening File");
-    let mut contents = String::new();
-    file.read_to_string(&mut contents).unwrap();
-    let config: menu_model::Config = toml::from_str(&contents).unwrap();
-    config
+#[cfg(test)]
+mod tests {
+
+    // Note this useful idiom: importing names from outer (for mod tests) scope.
+    use super::*;
+    #[test]
+    fn test_get_application_dir() {
+        // need to mock OS, but I don't know how
+        assert_eq!(get_application_dir(), "/usr/local/share/applications/") ;
+    }
 }

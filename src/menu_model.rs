@@ -23,17 +23,6 @@ pub struct Menu {
 }
 
 #[derive(Deserialize, Debug)]
-pub struct ShortNames {
-    pub inkscape: Vec<String>,
-    pub ristretto: Vec<String>,
-    pub gimp: Vec<String>,
-    pub xfburn: Vec<String>,
-    pub pcmanfm: Vec<String>,
-    pub pycharm: Vec<String>,
-    pub bluefish: Vec<String>,
-}
-
-#[derive(Deserialize, Debug)]
 pub struct AppPath {
     pub path: String
 }
