@@ -1,4 +1,4 @@
-/// model.menu.rs
+/// menu.rs
 /// holds the structs for the menus
 
 /*
