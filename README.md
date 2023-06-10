@@ -2,7 +2,7 @@
 
 ---
 
-### Philosophy
+## Philosophy
 
 Remember to do one thing and do it well.
 > Better to have 100 functions operate on one data structure than to have 10 functions operate on 10 data structures.
@@ -13,7 +13,7 @@ Remember to do one thing and do it well.
 
 ---
 
-# Steps, Path, Roadmap
+## Steps, Path, Roadmap
 
 - Read applications directory
   - Set application directory.
@@ -30,6 +30,7 @@ Remember to do one thing and do it well.
 ## Focus
 
 ### Application Directory
+
 - get location of applications directory
   - NetBSD - `/usr/pkg/share/applications`
   - Almost everyone else - `/usr/local/share/applications/`
@@ -38,6 +39,7 @@ Remember to do one thing and do it well.
 - get all files with .desktop extension
 
 ### Read desktop files
+
 - Cycle through file list and read each file
 - Parse out all required (needed) data
   - Type
@@ -47,13 +49,14 @@ Remember to do one thing and do it well.
   - Terminal (bool)
 
 ### Create Menu
+
 - generate structs
 - organize by category
 - create menu file
 
 ---
 
-## Percolate 
+## Percolate
 
 - Read and parse each file concurrently or in parallel
 - Insert menu into .fvwmrc file
