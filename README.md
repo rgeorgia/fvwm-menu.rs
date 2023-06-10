@@ -2,23 +2,29 @@
 
 ---
 
-## Philosophy
+## XDG ENV settings
 
-Remember to do one thing and do it well.
-> Better to have 100 functions operate on one data structure than to have 10 functions operate on 10 data structures.
-  
-- Make each function do **one** thing well
-- Expect the output of very function to become the input of another (yet unknown) function
-- Design functions to be tested early
+Taken from openSUSE Gnome
 
----
+```bash
+XDG_CONFIG_DIRS=/etc/xdg:/usr/local/etc/xdg:/usr/etc/xdg
+XDG_MENU_PREFIX=gnome-
+XDG_SESSION_DESKTOP=default
+XDG_SESSION_TYPE=wayland
+XDG_CURRENT_DESKTOP=GNOME
+XDG_SESSION_CLASS=user
+XDG_RUNTIME_DIR=/run/user/1000
+XDG_DATA_DIRS=/home/rgeorgia/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share/:/usr/share/
+```
 
 ## Steps, Path, Roadmap
 
+- Check XDG environment variables
+  - if empty load default values
 - Read applications directory
-  - Set application directory.
   - NetBSD - `/usr/pkg/share/applications`
   - Almost everyone else - `/usr/local/share/applications/`
+  - Check local applications directory. `$HOME/.local/share/applicatons`
 - Get all the files that have a .desktop extension
 - Read each file
 - Parse each file for specific properties
@@ -34,9 +40,12 @@ Remember to do one thing and do it well.
 - get location of applications directory
   - NetBSD - `/usr/pkg/share/applications`
   - Almost everyone else - `/usr/local/share/applications/`
-- **Verify path** exists; if not, exit
+  - Verify with [XDG specification](https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html)
+- **Verify path** exists
+  - Check all locations based on XDG env variables and XDG spec
+  - Check local paths
 - List application directory
-- get all files with .desktop extension
+  - get all files with .desktop extension
 
 ### Read desktop files
 
@@ -52,7 +61,7 @@ Remember to do one thing and do it well.
 
 - generate structs
 - organize by category
-- create menu file
+- Print meun based on fvwm spec
 
 ---
 
