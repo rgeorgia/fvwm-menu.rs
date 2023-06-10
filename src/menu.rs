@@ -55,6 +55,8 @@ Categories=X-Bible;X-Religion;Literature;Education;Dictionary;Qt;
 Keywords=bible;study;religion;literature;education;
  */
 
+use serde_derive::Deserialize;
+
 #[derive(Deserialize, Debug)]
 pub struct Menu {
     pub comment: String,
