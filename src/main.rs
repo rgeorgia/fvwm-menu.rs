@@ -1,4 +1,4 @@
-pub(crate) mod model;
+mod menu;
 
 /*
 [ ] Find application directory
