@@ -19,7 +19,20 @@ XDG_RUNTIME_DIR=/tmp/runtime-${LOGNAME}
 XDG_DATA_DIRS=/home/rgeorgia/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share/:/usr/share/
 XDG_DATA_DIRS=/home/rgeorgia/.local/share/applications/
 ```
+Taken from ArcoLinux - fvwm3 desktop
 
+```bash
+XDG_SESSION_PATH=/org/freedesktop/DisplayManager/Session1
+XDG_SEAT=seat0
+XDG_SESSION_DESKTOP=
+XDG_SESSION_TYPE=x11
+XDG_SEAT_PATH=/org/freedesktop/DisplayManager/Seat0
+XDG_SESSION_CLASS=user
+XDG_VTNR=2
+XDG_SESSION_ID=2
+XDG_RUNTIME_DIR=/run/user/1000
+XDG_DATA_DIRS=/home/rgeorgia/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share:/var/lib/snapd/desktop
+```
 ## Steps, Path, Roadmap
 
 - Check XDG environment variables
