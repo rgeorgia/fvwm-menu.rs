@@ -14,7 +14,7 @@
 
 ---
 
-## Focus
+## Notes
 
 ### Application Directory
 
