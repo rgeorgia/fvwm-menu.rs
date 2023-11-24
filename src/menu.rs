@@ -69,3 +69,4 @@ pub struct Menu {
     pub categories: Vec<String>,
     pub keywords: Vec<String>,
 }
+
