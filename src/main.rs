@@ -1,7 +1,9 @@
 mod menu;
 
-use std::fs::DirEntry;
-use std::path::Path;
+use std::fs::{DirEntry, File};
+use std::io::{BufReader, Read};
+use std::io::BufRead;
+use std::path::{Path, PathBuf};
 /*
 [X] Read $HOME/.local/share/applications
 [I] List all files with .desktop ext
@@ -18,7 +20,8 @@ fn main() {
 
     let files = list_app_dir(&app_dir);
     for name in files.iter() {
-        println!("{:?}", name.path());
+        let f = name.path();
+        read_file_to_struct(f).expect("Error reading file");
     }
 }
 
@@ -31,7 +34,17 @@ fn list_app_dir(dir_path: &Path) -> Vec<DirEntry>{
     }
     files
 }
-fn read_files(){}
+fn read_file_to_struct(file_to_read: PathBuf) -> std::io::Result<()> {
+    let file = File::open(file_to_read.to_str().unwrap().trim())?;
+    let reader = BufReader::new(file);
+
+    for line in reader.lines() {
+        let line = line?;
+        println!("{}", line);
+    }
+
+    Ok(())
+}
 
 fn build_menu(){}
 
