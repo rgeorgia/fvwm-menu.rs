@@ -1,5 +1,4 @@
 mod menu;
-mod files;
 
 use std::fs::DirEntry;
 use std::path::Path;
