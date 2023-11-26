@@ -58,15 +58,13 @@ Keywords=bible;study;religion;literature;education;
 use serde_derive::Deserialize;
 
 #[derive(Deserialize, Debug)]
-pub struct Menu {
-    pub comment: String,
-    pub exec: String,
-    pub icon: String,
+pub struct DesktopEntry {
     pub name: String,
-    pub generic_name: String,
-    pub terminal: bool,
     pub app_type: String,
+    pub icon: String, // Path
+    pub exec: String, // Path
+    pub comment: String,
     pub categories: Vec<String>,
-    pub keywords: Vec<String>,
+    pub terminal: bool,
 }
 

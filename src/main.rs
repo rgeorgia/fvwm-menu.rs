@@ -4,15 +4,6 @@ use std::fs::{DirEntry, File};
 use std::io::{BufReader, Read};
 use std::io::BufRead;
 use std::path::{Path, PathBuf};
-/*
-[X] Read $HOME/.local/share/applications
-[I] List all files with .desktop ext
-[ ] read each file
-[ ] build structs for menus
-[ ] build menu categories
-[ ] print menu
- */
-
 
 fn main() {
 
@@ -38,6 +29,7 @@ fn read_file_to_struct(file_to_read: PathBuf) -> std::io::Result<()> {
     let file = File::open(file_to_read.to_str().unwrap().trim())?;
     let reader = BufReader::new(file);
 
+    println!("***************** {}", file_to_read.display());
     for line in reader.lines() {
         let line = line?;
         println!("{}", line);
