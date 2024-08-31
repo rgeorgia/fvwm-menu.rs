@@ -4,6 +4,7 @@
 
 ## Steps, Path, Roadmap
 
+
 - Check local applications directory. `$HOME/.local/share/applicatons`
   - Require desktop files to be copied here.
 - Get all the files that have a .desktop extension
